@@ -1,5 +1,6 @@
 package net.sublime.remoteidentify.dto;
 
+
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Getter;
@@ -9,13 +10,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class DocData {
+public class Profile {
+    private CommonData commonData;
+    private DocData docData;
+    private Contacts contacts;
+    private Address address;
+    private String authenticationMethod;
 
-   private String passData;
-   private String issuedBy;
-   private String issuedById;
-   private String issuedDate;
-   private String expiryDate;
-   private String docType;
-   private String docTypeId;
 }

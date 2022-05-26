@@ -10,6 +10,6 @@ import lombok.Setter;
 public class Address {
     private String permanentAddress;
     private String temporaryAddress;
-    private Registration permanentRegistration;
-    private Registration temporaryRegistration;
+    private PermanentRegistration permanentRegistration;
+    private TemporaryRegistration temporaryRegistration;
 }

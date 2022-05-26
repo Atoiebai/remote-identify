@@ -1,5 +1,6 @@
 package net.sublime.remoteidentify.controller;
 
+import net.sublime.remoteidentify.dto.MyIdResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 public class EchoController {
 
     @PostMapping
-    public ResponseEntity<Object> echo(@RequestBody Object object) {
+    public ResponseEntity<Object> echo(@RequestBody MyIdResponse object) {
         return ResponseEntity.ok(object);
     }
 
@@ -16,4 +17,6 @@ public class EchoController {
     public ResponseEntity<Object> echoGet() {
         return ResponseEntity.ok("Success 200");
     }
+
+
 }

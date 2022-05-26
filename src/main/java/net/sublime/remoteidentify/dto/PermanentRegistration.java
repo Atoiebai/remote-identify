@@ -1,5 +1,7 @@
 package net.sublime.remoteidentify.dto;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -7,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Registration {
+public class PermanentRegistration {
     private String  region;
     private String  address;
     private String  country;
