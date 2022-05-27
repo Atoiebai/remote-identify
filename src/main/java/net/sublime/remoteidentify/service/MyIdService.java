@@ -14,12 +14,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class MyIdService {
 
-    ObjectMapper objectMapper = new ObjectMapper();
+    ObjectMapper objectMapper = new ObjectMapper().configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT , true);
 
-    {
-        objectMapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT , true);
-
-    }
     public HttpResponse<String> getToken(MyIdMobileRequest myIdMobileRequest) throws UnirestException {
 
         return Unirest.post("https://myid.uz/api/v1/oauth2/access-token")
