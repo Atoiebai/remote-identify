@@ -29,6 +29,24 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      
+  build-and-deploy:
+    name: Backend Deployment to Linux VM
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: update and start project
+        uses: appleboy/ssh-action@master
+        with:
+          host: ec2-34-209-85-91.us-west-2.compute.amazonaws.com
+          username: ec2-user
+          password: kipchak
+          script: |
+            kill -9 $(pgrep -f remote)
+            cd remote-identify/
+            git pull
+            mvn clean package
+            nohup java -jar target/*.jar &
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
 #     - name: Update dependency graph
