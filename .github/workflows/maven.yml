@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: update and start project
+      - name: update and start 
         uses: appleboy/ssh-action@master
         with:
           host: 34.209.85.91
