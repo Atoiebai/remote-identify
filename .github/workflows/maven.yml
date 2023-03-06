@@ -42,7 +42,6 @@ jobs:
           username: islam
           password: kipchak
           script: |
-            kill -9 $(pgrep -f remote)
             cd remote-identify/
             git pull
             mvn clean package
