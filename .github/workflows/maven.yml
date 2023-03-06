@@ -38,15 +38,15 @@ jobs:
       - name: update and start project
         uses: appleboy/ssh-action@master
         with:
-          host: ec2-34-209-85-91.us-west-2.compute.amazonaws.com
-          username: ec2-user
+          host: 34.209.85.91
+          username: islam
           password: kipchak
           script: |
             kill -9 $(pgrep -f remote)
             cd remote-identify/
             git pull
             mvn clean package
-            nohup java -jar target/*.jar &
+            java -jar target/*.jar &
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
 #     - name: Update dependency graph
